@@ -3,6 +3,60 @@
 @import "bower_components/sass-mediaqueries/_media-queries.scss";
 // endbower
 
-body:before {
-  content: "I'm at 'app/css/main.scss";
+// body:before {
+//   content: "I'm at 'app/css/main.scss";
+// }
+
+$borders: 20px;
+
+@font-face {
+  font-family: 'chbold';
+  src: url('../fonts/CooperHewitt-Bold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CooperHewitt-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CooperHewitt-Bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/CooperHewitt-Bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/CooperHewitt-Bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CooperHewitt-Bold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'chreg';
+  src: url('../fonts/CooperHewitt-Semibold.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CooperHewitt-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CooperHewitt-Semibold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/CooperHewitt-Semibold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/CooperHewitt-Semibold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CooperHewitt-Semibold.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+
+$chBold: 'chbold', Fallback, sans-serif;
+$chReg: 'chreg', Fallback, sans-serif;
+
+html, body {
+	background-color: #111111;
+	height: 100%;
+}
+
+.header-wrapper {
+	border-left: $borders solid white;
+	border-right: $borders solid white;
+	height: 100%;
+}
+
+.header-wrapper__inner {
+	border-top: $borders solid white;
+}
+
+.content-wrapper {
+	background-color: white;
+	padding: $borders; 
+}
+
+.hero {
+	font-family: $chReg;
+	color: white;
+	font-size: 42px;
+	line-height: 59px;
+	font-weight: normal;
+	letter-spacing: 2px;
+	padding: 200px;
 }
