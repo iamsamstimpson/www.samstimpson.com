@@ -20,6 +20,15 @@ $borders: 20px;
 }
 @font-face {
   font-family: 'chreg';
+  src: url('../fonts/CooperHewitt-Book.eot'); /* IE9 Compat Modes */
+  src: url('../fonts/CooperHewitt-Book.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../fonts/CooperHewitt-Book.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../fonts/CooperHewitt-Book.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../fonts/CooperHewitt-Book.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../fonts/CooperHewitt-Book.svg#svgFontName') format('svg'); /* Legacy iOS */
+}
+@font-face {
+  font-family: 'chSemi';
   src: url('../fonts/CooperHewitt-Semibold.eot'); /* IE9 Compat Modes */
   src: url('../fonts/CooperHewitt-Semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('../fonts/CooperHewitt-Semibold.woff2') format('woff2'), /* Super Modern Browsers */
@@ -31,6 +40,12 @@ $borders: 20px;
 $chBold: 'chbold', Fallback, sans-serif;
 $chReg: 'chreg', Fallback, sans-serif;
 
+// background-image: radial-gradient(circle 1400px at 300px center, #b90046 0%,#ff4600 100%);
+// background-image: url("/images/background-large.jpg"),radial-gradient(circle 1400px at 300px center, #b90046 0%,#ff4600 100%);
+// background-position: center bottom;
+// background-blend-mode: multiply;
+// background-size: cover;
+
 html, body {
 	background-color: #111111;
 	height: 100%;
@@ -40,10 +55,17 @@ html, body {
 	border-left: $borders solid white;
 	border-right: $borders solid white;
 	height: 100%;
+	background-image: radial-gradient(circle 1400px at 300px center, #b90046 0%,#ff4600 100%);
 }
 
 .header-wrapper__inner {
 	border-top: $borders solid white;
+	background-image: url("../images/TEMP.jpg"),radial-gradient(circle 1400px at 300px center, #b90046 0%,#ff4600 100%);
+	background-position: center bottom;
+	background-blend-mode: multiply;
+	background-size: cover;
+	height: 100%;
+	background-attachment: fixed;
 }
 
 .content-wrapper {
@@ -52,11 +74,22 @@ html, body {
 }
 
 .hero {
+	@include max-screen(900px) {
+		padding: 0 20px 0 20px;
+		font-size: 32px;
+		line-height: 49px;
+	}
 	font-family: $chReg;
 	color: white;
 	font-size: 42px;
 	line-height: 59px;
 	font-weight: normal;
 	letter-spacing: 2px;
-	padding: 200px;
+	padding: 200px 0 0 100px;
+	max-width: 900px;
+}
+
+.hero strong {
+	font-family: chSemi;
+	font-weight: normal;
 }
